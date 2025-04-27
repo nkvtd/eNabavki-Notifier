@@ -65,7 +65,7 @@ function insertDB(data) {
                     reject(error)
                 }
                 else {
-                    resolve(this.lastID)
+                    resolve(this.changes)
                 }
             }
         );
