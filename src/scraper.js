@@ -59,7 +59,7 @@ async function scrape() {
         const newData = []
         for (const row of data) {
             const result = await insertDB(row);
-            if(result > 1) {
+            if(result > 0) {
                 newData.push(row)
             }
         }
