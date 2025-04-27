@@ -1,0 +1,28 @@
+{
+  "name": "enabavki-notifier",
+  "version": "1.0.0",
+  "description": "Discord notifier for new contracts in Macedonia",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkvtd/eNabavki-Notifier.git"
+  },
+  "author": "nkvtd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nkvtd/eNabavki-Notifier/issues"
+  },
+  "homepage": "https://github.com/nkvtd/eNabavki-Notifier#readme",
+  "dependencies": {
+    "discord.js": "^14.19.1",
+    "dotenv": "^16.5.0",
+    "node-cron": "^3.0.3",
+    "puppeteer": "^24.7.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sqlite3": "^5.1.7"
+  }
+}
