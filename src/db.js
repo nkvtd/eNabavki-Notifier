@@ -1,8 +1,15 @@
 const {resolve} = require("node:path");
 const {logBot} = require("./bot");
 const sqlite = require('sqlite3').verbose();
-const path = resolve(__dirname, '../data/database.db');
-const database = new sqlite.Database(path);
+const fs = require('fs');
+
+const dataPath = './data';
+if (!fs.existsSync(dataPath)) {
+    fs.mkdirSync(dataPath);
+}
+
+const DBPath = resolve(__dirname, '../data/database.db');
+const database = new sqlite.Database(DBPath);
 
 database.run(`
     CREATE TABLE IF NOT EXISTS dogovori (
