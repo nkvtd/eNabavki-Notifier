@@ -6,8 +6,9 @@ puppeteer.use(StealthPlugin());
 
 async function scrape() {
     const browser = await puppeteer.launch({
-        headless: true,
-        defaultViewport: null
+        headless: false,
+        defaultViewport: null,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
 
     const page = await browser.newPage();
@@ -16,6 +17,7 @@ async function scrape() {
             waitUntil: 'networkidle2',
             timeout: 60000,
         })
+
 
         await page.waitForFunction(() => {
             const table = document.querySelector('.table-responsive table');
@@ -26,7 +28,7 @@ async function scrape() {
             const rows = table.querySelectorAll('tbody tr')
             return rows.length > 0 && rows[0].querySelectorAll('td').length > 0 && rows[0].querySelector('td').textContent.trim() !== ''
         }, {
-            timeout: 60000,
+            timeout: 120000,
             polling: 1000
         })
 
